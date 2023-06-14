@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO List</title>
+</head>
+<body>
+    <h1>TODO List</h1>
+    <form action="/add" method="POST">
+        <input type="text" name="todo" placeholder="Enter a task">
+        <button type="submit">Add</button>
+    </form>
+    <ul>
+        {% for todo in todos %}
+        <li>
+            {{ todo }}
+            <a href="/delete/{{ loop.index }}">[Delete]</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
